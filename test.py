@@ -16,13 +16,13 @@ if __name__ == '__main__':
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
     print(f'Using device {device}')
 
-    folder = 'models/'
+    folder = 'models/pretrained/'
     model = folder + 'L1.pth'  
 
     net.to(device=device)
     net.load_state_dict(torch.load(model, map_location=device))
-    input_dir = Path('data/input/')
-    output_dir = 'data/output/'
+    input_dir = Path('data/test/input/')
+    output_dir = 'data/test/output/'
 
     depth = 1024
     width = 1024
